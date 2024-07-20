@@ -1,0 +1,13 @@
+USE bdflask;
+
+CREATE TABLE Albums (
+  AlbumID INT IDENTITY(1,1) PRIMARY KEY,
+  Titulo NVARCHAR(250) NOT NULL,
+  Artista NVARCHAR(250) NOT NULL UNIQUE,
+  Anio INT
+);
+
+SELECT * FROM Albums;
+
+
+
