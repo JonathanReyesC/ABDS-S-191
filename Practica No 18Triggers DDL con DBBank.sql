@@ -114,7 +114,7 @@ BEGIN
         PRINT 'Ocurrió un error, se deshizo la transacción.';
     END CATCH
 END;
-GO
+
 
 
 
@@ -149,7 +149,7 @@ BEGIN
     ORDER BY 
         c.ClienteID, p.PrestamoID, pa.PagoID;
 END;
-GO
+
 
 
 
@@ -163,10 +163,10 @@ EXEC InsertarPrestamoYPago
     @FechaFin = '2024-07-01',
     @MontoPagado = 500.00,
     @FechaPago = '2023-07-10';
-GO
+
 Verifiaciones 
 
 
 -- Ejecutar el procedimiento para consultar los clientes con sus préstamos y pagos
 EXEC ConsultarClientesPrestamosYPagos;
-GO
+
