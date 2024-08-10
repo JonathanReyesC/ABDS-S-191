@@ -100,6 +100,27 @@ UPDATE Cuentas
 SET Saldo = -500.00
 WHERE CuentaID = 1;
 
+-- Insertar datos de prueba
+INSERT INTO Cuentas (ClienteID, TipoCuenta, Saldo, FechaApertura)
+VALUES (1, 'Ahorros', 1000.00, '2023-01-01');
+GO
+
+-- Intentar actualizar una cuenta con saldo negativo
+UPDATE Cuentas
+SET Saldo = -500.00
+WHERE CuentaID = 1;
+GO
+-- Probar manualmente el Trigger
+BEGIN TRANSACTION;
+
+-- Intentar una actualización que debería fallar
+UPDATE Cuentas
+SET Saldo = -500.00
+WHERE CuentaID = 1;
+
+COMMIT TRANSACTION;
+GO
+
 -- Crear Trigger para evitar eliminar préstamos con pagos asociados
 CREATE TRIGGER Trigger_EvitarEliminacionPrestamo
 ON Prestamos

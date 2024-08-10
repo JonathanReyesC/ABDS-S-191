@@ -169,4 +169,3 @@ Verifiaciones
 
 -- Ejecutar el procedimiento para consultar los clientes con sus préstamos y pagos
 EXEC ConsultarClientesPrestamosYPagos;
-
